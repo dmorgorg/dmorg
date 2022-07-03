@@ -1,0 +1,219 @@
+// src/lib/styles/app.scss
+
+:root {
+    --primary: #5D7F69;
+    --secondary: #E4D8B7;
+}
+
+html {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.35;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.fade-horizontal {
+    overflow-y: hidden;
+}
+
+main {
+    padding: 0 calc(50vw - 19em);
+    overflow-y: auto;
+    background-attachment: fixed;
+    padding-bottom: 3em;
+
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, red 5%, red 95%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 1%, red 5%, red 95%, transparent 99%);
+
+}
+
+ img {
+     max-width: 100%;
+     display: block;
+     margin: 0 auto;
+     box-shadow: 1px 1px 6px #ccc;
+     border-radius: 5px;
+ }
+
+ h1, h2, h3 {
+    color: var(--primary);
+ }
+
+ h1 {
+     text-align: center;
+     text-decoration: none;
+     text-shadow: 1px 1px 4px #888;
+     margin-top: 2em;
+ }
+
+ h1+h1 {
+     /* border: 1px solid black; */
+     margin-top: -0.5em;
+     margin-bottom: 2em;
+     text-decoration: underline;
+ }
+
+ h2 {
+     margin: 2em auto 0 -2em;
+     text-decoration: underline;
+ }
+
+ h3 {
+     margin: 2em auto -0.5em -2.5em;
+ }
+
+ h2+h3 {
+     margin-top: 1em;
+ }
+
+.right {
+    float: right;
+}
+.left {
+    float: left;
+}
+.clear {
+    clear: both;
+}
+.vert2em {
+    height: 2em;
+}
+
+a:link,
+a:visited,
+a:active {
+    color: var(--primary);
+}
+
+
+
+
+.width75 {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+}
+.width65 {
+    display: block;
+    width: 65%;
+    margin: 0 auto;
+}
+
+.width60 {
+    display: block;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.width50 {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.width40 {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.width25 {
+    display: block;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.centre {
+    display: flex;
+    justify-content: center;
+
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+// styling for prism in markdown files
+// inline code (single backtick) in md files
+p code,
+li code {
+    font-size: 1.2em;
+    padding: 0.25em;
+    padding-top: 0;
+    padding-bottom: 0.0125em;
+    border-radius: 3px;
+    font-weight: bolder;
+    letter-spacing: -0.005in;
+    white-space: nowrap;
+    background: #ddd;
+}
+
+blockquote {
+    border-left: .5em solid var(--primary);
+    padding: 0.35em 1em;
+    font-size: 85%;
+    background-color: #ddd;
+    margin-right: 0;
+
+    pre code[class*="language-"] {
+        font-size: 0.9em;
+    }
+}
+
+pre code[class*="language-"] {
+    font-size: 1.1em;
+}
+
+/* fenced code blocks */
+pre[class*="language-"] {
+    overflow: auto;
+    border-radius: 0.375em;
+    background: #ddd;
+}
+
+/* width */
+main::-webkit-scrollbar {
+    width: 1em;
+}
+
+/* Track */
+main::-webkit-scrollbar-track {
+    background: var(--primary);
+    background: var(--secondary);
+    // padding: 0 2px;
+    width: 1em;
+}
+
+/* Handle */
+main::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 0.5em;
+    border: 4px solid var(--secondary);
+    
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+    border: 2px solid var(--secondary);
+}
+
+* {
+    scrollbar-width: auto;
+    /* "auto" or "thin" */
+    scrollbar-color: var(--primary) var(--secondary);
+    /* scroll thumb and track */
+}
