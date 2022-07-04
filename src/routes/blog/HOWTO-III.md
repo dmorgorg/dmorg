@@ -13,7 +13,7 @@
 
 
 
-<h1 class = "subH1">Starting the Blog Part</h1>
+<h1 class = "subH1">Time For The Blog Part</h1>
 
 
 <div class="vert2em" />

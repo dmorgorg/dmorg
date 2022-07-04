@@ -1,6 +1,6 @@
 ---
     title: How I Coded This Site - I  
-    date: 2018
+    date: "2022-06-20"
     categories:
     - SvelteKit
     - markdown
