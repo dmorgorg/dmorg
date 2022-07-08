@@ -90,6 +90,59 @@ Consult the SvelteKit documentation to learn more about the `load()` function. I
 
 `<script context = "module">` runs "once when the module first evaluates". We can still have a regular `<script>` in the file; in fact, the regular script tags are needed to expose the props.
 
+## A New Blog Directory
+
+Create a directory `blog` in the `src` directory. This is outside the `routes` so we cannot navigate directly to this directory.
+
+```markdown
+---
+    title: this is the `hello.md` title
+    date: "2001-12-31"
+---
+<!-- src/blog/hello.md -->
+
+<style>
+    * {
+        margin: 0 auto;
+        text-align: center;
+    }
+</style>
+
+`hello md`
+```
+
+Edit `src/routes/blog/[slug].svelte` to look as follows:
+
+```svelte
+<!-- src/routes/blog/[slug].svelte -->
+<script context="module">
+	export async function load({ params }) {
+		const BlogPost = await import('../../blog/hello.md');
+		
+		return {
+			props: {
+				BlogPost: BlogPost.default,
+				slug: params.slug
+			}
+		};
+	}
+</script>
+
+<script>
+	export let BlogPost;
+</script>
+
+<BlogPost />
+```
+
+So, if the file shown in the `url` does not exist (e.g. `localhost:3000/blog/post142`), `[slug].svelte` is used and imports our newly created `src/blog/hello.md` file. And, as long as `BlogPost` has a leading uppercase letter ('B'), magically a `<BlogPost />` component is created behind the scenes (I haven't found the documentation for this!) and the contents of `hello.md` are rendered:
+
+<div>
+    <img src="../images/howTo/sluggardly2.png" sveltekit prefetch alt="slug" />
+</div>
+
+
+
 
 
 

@@ -1,8 +1,18 @@
 <script context="module">
-	export async function load(obj) {
-		console.log({obj});		
-		return {};
+	export async function load({ params }) {
+		const BlogPost = await import('../../blogPosts/hello.md');
+		
+		return {
+			props: {
+				BlogPost: BlogPost.default,
+				slug: params.slug
+			}
+		};
 	}
 </script>
-<h1>Slug Page </h1>
 
+<script>
+	export let BlogPost;
+</script>
+
+<BlogPost />
