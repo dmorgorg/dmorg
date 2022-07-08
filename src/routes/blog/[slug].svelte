@@ -1,6 +1,6 @@
 <script context="module">
 	export async function load({ params }) {
-		const BlogPost = await import('../../blogPosts/hello.md');
+		const BlogPost = await import('../../_blog/hello.md');
 		
 		return {
 			props: {

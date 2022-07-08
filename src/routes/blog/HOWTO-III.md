@@ -141,6 +141,12 @@ So, if the file shown in the `url` does not exist (e.g. `localhost:3000/blog/pos
     <img src="../images/howTo/sluggardly2.png" sveltekit prefetch alt="slug" />
 </div>
 
+> Replace `BlogPost` with `blogpost`, or any variable with a lower case initial letter, and the code will break.
+>
+> It is not necessary for both `blog` directories to have the same name but if they are named differently it is necessary to specify `layout: blog` in the frontmatter of `hello.md`
+>
+> A separate folder for posts outside the routes folder is a tidy way to proceed
+
 
 
 
