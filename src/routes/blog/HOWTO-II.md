@@ -1,10 +1,10 @@
 ---
     title: How I Coded This Site - II  
     date: "2022-06-29"
-    categories:
-    - SvelteKit
-    - markdown
-    - coding
+    # categories:
+    # - SvelteKit
+    # - markdown
+    # - coding
     # layout: false
 ---
 
@@ -470,6 +470,30 @@ mdsvex({
 Properties from the markdown frontmatter are available as component props, which is both useful and powerful. Note that dates are simpler to use as strings to avoid additional formatting requirements. 
 
 We could also use a nested Svelte layout, i.e. add a `__layout.svelte` to the `blog` directory. This will extend the `__layout.svelte` file in the parent `routes` directory.
+
+
+## About Page
+
+Create a simple about page, `about.md`, in `routes`:
+
+```markdown
+---
+    date: "22-07-04"
+    title: About
+---
+<!-- src/routes/about.md -->
+
+### Stuff About Me
+
+* Occasional Cyclist
+* Opportunistic Photographer
+* Unrepentant Geek
+* Inveterate Nomad
+* Terminal Cynic
+```
+
+and view it at `localhost:3000/about`. Note that the md layout is not applied to this since it is not in the `blog` folder. (We can tell because the `title` isn't displayed.) If you wish to apply the md layout, add `layout: blog` to the file's frontmatter.
+
 
 
 

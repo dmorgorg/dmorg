@@ -1,0 +1,29 @@
+<script context="module">
+	export async function load({ error, status, url, params }) {
+		return {
+			props: {
+				error,
+				status,
+				url,
+				params
+			}
+		};
+	}
+</script>
+
+<script>
+	export let error;
+	export let status;
+	export let url;
+	export let params;
+
+	console.log({ error, status, url, params });
+</script>
+
+<div class="center"><h2>{status} Error</h2></div>
+
+{#if status === 404}	
+	<div class="center">{url.href} not found.</div>
+{:else}
+	<div class="center"><h3>{error.name}</h3></div>
+{/if}

@@ -6,7 +6,7 @@
 </script>
 
 <header>
-	<a href="/">
+	<a href="/" sveltekit:prefetch >
 		{title} : : {subtitle}
 	</a>
 </header>
